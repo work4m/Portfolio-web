@@ -498,6 +498,7 @@ footer {
     
     .hero-actions { justify-content: center; }
     .hero-desc { margin: 0 auto 40px auto; }
+    .code-window { text-align: left; margin: 0 auto; max-width: 100%; }
     
     .skills-container, .projects-grid {
         grid-template-columns: 1fr;
@@ -513,5 +514,12 @@ footer {
 
 @media (max-width: 600px) {
     .nav-links { display: none; }
-    .hero-title { font-size: 3rem; }
+    .hero-title { font-size: 2.5rem; }
+    .hero-subtitle { font-size: 1.1rem; min-height: 48px; }
+    .hero-actions { flex-direction: column; width: 100%; gap: 12px; }
+    .hero-actions .btn { width: 100%; }
+    .code-window { font-size: 0.75rem; }
+    .window-body { padding: 16px; }
+    .p-lg { padding: 24px; }
+    .p-xl { padding: 40px 20px; }
 }
