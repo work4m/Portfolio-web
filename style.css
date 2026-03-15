@@ -492,13 +492,14 @@ footer {
 @media (max-width: 860px) {
     .hero {
         grid-template-columns: 1fr;
-        text-align: center;
+        text-align: left;
         padding-top: calc(var(--nav-height) + 40px);
+        gap: 40px;
     }
     
-    .hero-actions { justify-content: center; }
-    .hero-desc { margin: 0 auto 40px auto; }
-    .code-window { text-align: left; margin: 0 auto; max-width: 100%; }
+    .hero-actions { justify-content: flex-start; }
+    .hero-desc { margin: 0 0 32px 0; max-width: 100%; }
+    .code-window { text-align: left; margin: 0; max-width: 100%; }
     
     .skills-container, .projects-grid {
         grid-template-columns: 1fr;
@@ -506,7 +507,7 @@ footer {
     
     .stats-grid {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 20px;
     }
 
     .timeline-header { flex-direction: column; align-items: flex-start; gap: 4px; }
@@ -514,12 +515,20 @@ footer {
 
 @media (max-width: 600px) {
     .nav-links { display: none; }
-    .hero-title { font-size: 2.5rem; }
-    .hero-subtitle { font-size: 1.1rem; min-height: 48px; }
-    .hero-actions { flex-direction: column; width: 100%; gap: 12px; }
-    .hero-actions .btn { width: 100%; }
-    .code-window { font-size: 0.75rem; }
+    .hero-title { font-size: 2.8rem; }
+    .hero-subtitle { font-size: 1.25rem; min-height: 48px; }
+    .hero-actions { flex-direction: column; width: 100%; gap: 16px; }
+    .hero-actions .btn { width: 100%; text-align: center; }
+    .code-window { font-size: 0.8rem; }
     .window-body { padding: 16px; }
+    
+    .section-title { font-size: 1.6rem; margin-bottom: 30px; gap: 10px; }
     .p-lg { padding: 24px; }
     .p-xl { padding: 40px 20px; }
+    .display-sm { font-size: 2rem; }
+    
+    .timeline-item { padding-left: 36px; margin-bottom: 32px; }
+    .timeline::before { left: 10px; }
+    .timeline-dot { left: 4px; width: 14px; height: 14px; }
+    .timeline-date { margin-bottom: 8px; }
 }
