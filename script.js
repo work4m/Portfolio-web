@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const textToType = typeElement.textContent;
         typeElement.textContent = '';
         typeElement.style.borderRight = '2px solid var(--accent-primary)';
-        
+
         let i = 0;
         const typingSpeed = 60; // ms per character
 
@@ -42,20 +42,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 }, 2000);
             }
         }
-        
+
         // Start typing after a brief delay
         setTimeout(typeWriter, 500);
     }
-    
+
     // --- Smooth Scrolling for Navbar Links --- //
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
-            if(targetId === '#') return;
-            
+            if (targetId === '#') return;
+
             const targetElement = document.querySelector(targetId);
-            if(targetElement) {
+            if (targetElement) {
                 targetElement.scrollIntoView({
                     behavior: 'smooth'
                 });

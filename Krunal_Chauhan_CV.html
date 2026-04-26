@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krunal Chauhan - Senior Frontend & Fullstack Engineer</title>
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #2563eb;
+            --text-main: #334155;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --bg-light: #f8fafc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.5;
+            color: var(--text-main);
+            background-color: #cbd5e1;
+            padding: 40px 20px;
+            -webkit-print-color-adjust: exact;
+        }
+
+        .cv-container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 50px 70px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border-radius: 4px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 35px;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 25px;
+        }
+
+        h1 {
+            color: var(--primary);
+            font-size: 32px;
+            font-weight: 800;
+            letter-spacing: -0.025em;
+            margin-bottom: 4px;
+        }
+
+        .role-title {
+            font-size: 18px;
+            color: var(--accent);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .contact-info span {
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info span:not(:last-child)::after {
+            content: "|";
+            margin-left: 12px;
+            color: var(--border);
+        }
+
+        section {
+            margin-bottom: 28px;
+        }
+
+        h2 {
+            color: var(--primary);
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 6px;
+        }
+
+        .summary-text {
+            font-size: 14px;
+            text-align: justify;
+            color: var(--text-main);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 180px 1fr;
+            gap: 12px;
+            font-size: 13.5px;
+        }
+
+        .skill-category {
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        .experience-item {
+            margin-bottom: 22px;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        h3 {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .date {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        .company-info {
+            font-size: 14px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        li {
+            position: relative;
+            padding-left: 18px;
+            margin-bottom: 5px;
+            font-size: 13.5px;
+            color: var(--text-main);
+        }
+
+        li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: 900;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .project-item {
+            background: var(--bg-light);
+            padding: 15px;
+            border-radius: 4px;
+            border-left: 3px solid var(--accent);
+        }
+
+        .project-title {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            color: var(--primary);
+        }
+
+        .tech-stack {
+            font-size: 12px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .project-desc {
+            font-size: 13px;
+        }
+
+        .education-item {
+            margin-bottom: 10px;
+        }
+
+        .print-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+
+        .print-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .cv-container {
+                box-shadow: none;
+                padding: 0;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .print-btn {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="cv-container">
+        <header>
+            <h1>Krunal Chauhan</h1>
+            <p class="role-title">Senior Frontend & Fullstack Engineer</p>
+            <div class="contact-info">
+                <span>Surat, India</span>
+                <span>+91 7990673926</span>
+                <span>krunalc58@gmail.com</span>
+                <span>github.com/work4m</span>
+            </div>
+        </header>
+
+        <section>
+            <h2>Professional Summary</h2>
+            <p class="summary-text">
+                Performance-driven <strong>Senior Frontend & Fullstack Engineer</strong> with over 7 years of experience
+                building scalable web and mobile applications. Specialized in <strong>React, Next.js, and React
+                    Native</strong>, with a strong focus on SaaS platforms and real-time systems. Proven track record of
+                bridging the gap between product requirements and technical execution, from optimizing frontend
+                performance to shipping complex cross-platform mobile apps with 99.8% stability.
+            </p>
+        </section>
+
+        <section>
+            <h2>Technical Arsenal</h2>
+            <div class="skills-grid">
+                <div class="skill-category">Frontend & Mobile</div>
+                <div>React (Next.js), React Native, Redux (Toolkit/Saga), MobX, Reanimated, Performance Optimization
+                    (SSR/ISR, Bundle size, 60FPS Animations)</div>
+
+                <div class="skill-category">Backend & Real-time</div>
+                <div>Node.js, Express, Socket.io, WebRTC (Peer.js), Firebase, GraphQL (AWS AppSync), REST API Design
+                </div>
+
+                <div class="skill-category">Cloud & Tools</div>
+                <div>AWS (Lambda, Cognito, AppSync), Azure AD, CI/CD (GitHub Actions), Nginx, TypeScript, Design Systems
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Professional Experience</h2>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <h3>Senior Frontend & Fullstack Engineer</h3>
+                    <span class="date">Nov 2022 – Apr 2026</span>
+                </div>
+                <p class="company-info">Eligarf Technologies | Remote</p>
+                <ul>
+                    <li><strong>Developed multiple SaaS platforms</strong> using React and Next.js, focusing on modular
+                        architecture, scalability, and high performance.</li>
+                    <li><strong>Engineered an enterprise SEO engine</strong> using custom Reverse Proxy architecture to
+                        dynamically manage content for high-traffic eCommerce clients.</li>
+                    <li><strong>Built high-performance analytics dashboards</strong>, optimizing complex data
+                        visualization components to handle multi-million data points in real-time.</li>
+                    <li><strong>Automated multi-environment CI/CD pipelines</strong> using GitHub Actions, ensuring
+                        99.9% uptime for international SaaS products.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <h3>Senior React Native Developer</h3>
+                    <span class="date">Oct 2019 – Dec 2020</span>
+                </div>
+                <p class="company-info">Addon Web Solutions | Ahmedabad</p>
+                <ul>
+                    <li><strong>Optimized mobile performance</strong> for high-traffic apps, achieving a 25% reduction
+                        in bundle sizes and 60FPS animations using Reanimated.</li>
+                    <li><strong>Architected real-time layers</strong> using Socket.io for sub-100ms latency in live data
+                        synchronization across cross-platform apps.</li>
+                    <li><strong>Standardized cross-platform UI components</strong>, building a reusable design system
+                        that accelerated feature delivery cycles by 35%.</li>
+                    <li><strong>Integrated complex IoT interfaces</strong> via Bluetooth/Wi-Fi, managing asynchronous
+                        state transitions with high reliability.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <h3>Jr React Native Developer</h3>
+                    <span class="date">Jan 2018 – Sep 2019</span>
+                </div>
+                <p class="company-info">Coldfin Lab | Surat</p>
+                <ul>
+                    <li><strong>Shipped 5+ React Native applications</strong>, managing the end-to-end lifecycle from
+                        initial prototyping to App Store/Play Store deployment.</li>
+                    <li><strong>Refactored legacy mobile codebases</strong> to modern Hooks-based architecture, reducing
+                        technical debt and improving maintainability.</li>
+                    <li><strong>Increased app stability</strong> to 99.8% crash-free sessions through rigorous state
+                        management optimization and component refactoring.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Featured Projects</h2>
+            <div class="project-grid">
+                <div class="project-item">
+                    <p class="project-title">Metis Tool: Analytics SaaS</p>
+                    <p class="tech-stack">React, Redux, Node.js, Next.js</p>
+                    <p class="project-desc">Developed a high-performance marketing analytics dashboard. Optimized
+                        component rendering and implemented efficient polling strategies to handle multi-million data
+                        point sets with zero UI lag.</p>
+                </div>
+                <div class="project-item">
+                    <p class="project-title">Murabbo: Real-time Multiplayer (Mobile)</p>
+                    <p class="tech-stack">React Native, Socket.io, Redux, Reanimated</p>
+                    <p class="project-desc">Engineered a low-latency tournament gaming app. Optimized native-bridge
+                        communication and implemented complex animations to achieve 60FPS performance on both iOS and
+                        Android.</p>
+                </div>
+                <div class="project-item">
+                    <p class="project-title">DiveThru: Mental Health App (Mobile)</p>
+                    <p class="tech-stack">React Native, Firebase, RevenueCat</p>
+                    <p class="project-desc">Built a premium meditation app with seamless audio streaming and complex IAP
+                        integration. Optimized audio caching for offline use and managed the full deployment lifecycle.
+                    </p>
+                </div>
+                <div class="project-item">
+                    <p class="project-title">TFG Wifi Grill: IoT Control (Mobile)</p>
+                    <p class="tech-stack">React Native, AWS AppSync, Bluetooth/Wi-Fi APIs</p>
+                    <p class="project-desc">Developed an IoT control center for high-end appliances. Managed complex
+                        asynchronous states for hardware pairing and ensured robust real-time state synchronization.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Education</h2>
+            <div class="education-item">
+                <div class="item-header">
+                    <h3>Master of Science in Information Technology (M.Sc. IT)</h3>
+                    <span class="date">2013 – 2018</span>
+                </div>
+                <p class="company-info">J.P. Dawer Institute of Information Science and Technology | Surat</p>
+            </div>
+        </section>
+    </div>
+
+    <button class="print-btn" onclick="window.print()">
+        <svg style="width:20px; height:20px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z">
+            </path>
+        </svg>
+        Print / Save PDF
+    </button>
+
+</body>
+
+</html>
